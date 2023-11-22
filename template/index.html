@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deep Fake Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        #deepFakeResult, #originalResult {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Deep Fake Detection</h1>
+                <p>Upload a video or image to detect deep fakes.</p>
+                <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" class="form-control-file mb-3" id="fileInput" name="fileInput" required>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Deep Fake</h3>
+                <div id="deepFakeResult" class="border p-3">
+                    <!-- Deep fake video/image will be displayed here -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Original</h3>
+                <div id="originalResult" class="border p-3">
+                    <!-- Original video/image will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
